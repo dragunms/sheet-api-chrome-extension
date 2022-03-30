@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script src="popup.js"></script>
+
+    <style>
+      body {
+        padding: 10px 30px;
+      }
+      .input-label {
+        width: 140px;
+        display: block;
+        background: dodgerblue;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: center;
+      }
+      .input-label:hover {
+        background: skyblue;
+      }
+
+      #run_rclone_move,
+      #run_rclone_to,
+      #export_rclone,
+      #add_group,
+      #add_email {
+        width: 200px;
+        display: block;
+        background: dodgerblue;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      #run_rclone_to:hover,
+      #run_rclone_move:hover,
+      #export_rclone:hover,
+      #add_group:hover,
+      #add_email:hover {
+        background: skyblue;
+      }
+      #input-file {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="run_rclone_move" onclick="">Run Move</button>
+    <button id="run_rclone_to" onclick="">Run To</button>
+    <button id="add_group" onclick="">Add group</button>
+    <button id="add_email" onclick="">Add email</button>
+
+    <button id="export_rclone" onclick="">Export Rclone</button>
+  </body>
+</html>

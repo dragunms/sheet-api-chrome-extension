@@ -1,0 +1,58 @@
+{
+  "name": "Move To Extension",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Move To Extension",
+  "icons": {
+    "512": "logo512.png"
+  },
+  "browser_action": {
+    "default_icon": "logo512.png",
+    "default_title": "Gmail Clone",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "./chrome/background.js",
+      "./chrome/lodash.js",
+      "./chrome/moment.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>",
+        "*://accounts.google.com/*",
+        "https://myaccount.google.com/*",
+        "https://console.cloud.google.com/*",
+        "https://gds.google.com/*",
+        "https://accounts.google.com/signin/v2/identifier"
+      ],
+      "js": ["./chrome/content.js"],
+      "web_accessible_resources": ["./chrome/trusted-security-policies.js"],
+      "all_frames": false,
+      "run_at": "document_end"
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": [
+    "tabs",
+    "*://accounts.google.com/*",
+    "https://myaccount.google.com/*",
+    "https://console.cloud.google.com/*",
+    "https://docs.google.com/spreadsheets/",
+    "https://gds.google.com/*",
+    "https://accounts.google.com/signin/v2/identifier",
+    "identity",
+    "proxy",
+    "contextMenus",
+    "history",
+    "background",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "cookies",
+    "<all_urls>"
+  ]
+}

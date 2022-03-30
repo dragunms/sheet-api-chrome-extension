@@ -1,0 +1,16 @@
+{
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["."],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "webextensions": true
+  }
+}
